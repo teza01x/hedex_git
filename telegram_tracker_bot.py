@@ -22,53 +22,53 @@ async def start(message):
         user_id = message.from_user.id
         username = message.from_user.username
 
-        try:
-            chat_type = message.chat.type
-            if chat_type == 'private':
-                chat_member = await bot.get_chat_member(hedex_start_chat_id, user_id)
-                channel_member = await bot.get_chat_member(hedex_start_channel_id, user_id)
-                if chat_member.status in ["creator", "administrator", "member"] and channel_member.status in ["creator", "administrator", "member"]:
-                    text = "*Greetings\!*\n*This is Hedex Wallet Tracker\!*\n*Here you can track your traders transactions using their blockchain wallets\.*"
 
-                    main_menu_text = ("Welcome to Hedex Wallet Tracker!\n"
-                                      "From here you can add wallets to track and configure your notifications!\n\n"
-                                      "More Information 👇\n\n"
-                                      "[⚡️ Hedex Portal ⚡️](https://t.me/HedexPortalBot)")
-                    main_menu_text = await escape(main_menu_text, flag=0)
+        chat_type = message.chat.type
+        if chat_type == 'private':
+            chat_member = await bot.get_chat_member(hedex_start_chat_id, user_id)
+            channel_member = await bot.get_chat_member(hedex_start_channel_id, user_id)
+            if chat_member.status in ["creator", "administrator", "member"] and channel_member.status in ["creator", "administrator", "member"]:
+                text = "*Greetings\!*\n*This is Hedex Wallet Tracker\!*\n*Here you can track your traders transactions using their blockchain wallets\.*"
 
-                    button_list1 = [
-                        types.InlineKeyboardButton("✨ Subscription ", callback_data="sub_propostion"),
-                    ]
-                    button_list2 = [
-                        types.InlineKeyboardButton("➕ Add Wallet", callback_data="add_wallet"),
-                        types.InlineKeyboardButton("⚙️ Configure", callback_data="configuration_menu"),
-                    ]
-                    button_list3 = [
-                        types.InlineKeyboardButton("✍️ Manage", callback_data="wallet_page_1"),
-                    ]
-                    reply_markup = types.InlineKeyboardMarkup([button_list1, button_list2, button_list3])
-                    await bot.send_message(message.chat.id, text=main_menu_text, reply_markup=reply_markup, parse_mode="MarkdownV2", disable_web_page_preview=True)
-                else:
-                    error_text = ("**Hey!👋**\n**It looks like you are new!**🆕\nTo use our tracking bot please join our Community by clicking the button below! 👇\n"
-                                  "Once you are a member of the Chat and have joined our information channel you’re good to go!\n")
-                    error_text = await escape(error_text, flag=0)
+                main_menu_text = ("Welcome to Hedex Wallet Tracker!\n"
+                                  "From here you can add wallets to track and configure your notifications!\n\n"
+                                  "More Information 👇\n\n"
+                                  "[⚡️ Hedex Portal ⚡️](https://t.me/HedexPortalBot)")
+                main_menu_text = await escape(main_menu_text, flag=0)
 
-                    button_list1 = [
-                        types.InlineKeyboardButton("Hedex Chat 💬", url="https://t.me/hedexbotgateway"),
-                    ]
-                    button_list2 = [
-                        types.InlineKeyboardButton("Hedex Info 📄", url="https://t.me/hedexbotinfo"),
-                    ]
-                    reply_markup = types.InlineKeyboardMarkup([button_list1, button_list2])
-                    await bot.send_message(message.chat.id, text=error_text, reply_markup=reply_markup, parse_mode="MarkdownV2", disable_web_page_preview=True)
+                button_list1 = [
+                    types.InlineKeyboardButton("✨ Subscription ", callback_data="sub_propostion"),
+                ]
+                button_list2 = [
+                    types.InlineKeyboardButton("➕ Add Wallet", callback_data="add_wallet"),
+                    types.InlineKeyboardButton("⚙️ Configure", callback_data="configuration_menu"),
+                ]
+                button_list3 = [
+                    types.InlineKeyboardButton("✍️ Manage", callback_data="wallet_page_1"),
+                ]
+                reply_markup = types.InlineKeyboardMarkup([button_list1, button_list2, button_list3])
+                await bot.send_message(message.chat.id, text=main_menu_text, reply_markup=reply_markup, parse_mode="MarkdownV2", disable_web_page_preview=True)
+            else:
+                error_text = ("**Hey!👋**\n**It looks like you are new!**🆕\nTo use our tracking bot please join our Community by clicking the button below! 👇\n"
+                              "Once you are a member of the Chat and have joined our information channel you’re good to go!\n")
+                error_text = await escape(error_text, flag=0)
 
-                if not await check_user_exists(user_id):
-                    try:
-                        await add_user_to_db(user_id, username)
-                    except Exception as error:
-                        print(f"Error adding user to db error:\n{error}")
-        except telebot.apihelper.ApiException:
-            await bot.reply_to(message, "Error: I might not have permissions or the user might not be in the chat.")
+                button_list1 = [
+                    types.InlineKeyboardButton("Hedex Chat 💬", url="https://t.me/hedexbotgateway"),
+                ]
+                button_list2 = [
+                    types.InlineKeyboardButton("Hedex Info 📄", url="https://t.me/hedexbotinfo"),
+                ]
+                reply_markup = types.InlineKeyboardMarkup([button_list1, button_list2])
+                await bot.send_message(message.chat.id, text=error_text, reply_markup=reply_markup, parse_mode="MarkdownV2", disable_web_page_preview=True)
+
+            if not await check_user_exists(user_id):
+                try:
+                    await add_user_to_db(user_id, username)
+                except Exception as error:
+                    print(f"Error adding user to db error:\n{error}")
+            else:
+                await update_username(user_id, username)
     except Exception as e:
         print(f"Error in start message: {e}")
 
@@ -82,6 +82,15 @@ async def callback_query(call):
         await bot.answer_callback_query(call.id)
         try:
             user_id = call.message.chat.id
+            get_users_activity_status = await get_users_active_status(user_id)
+            if get_users_activity_status == 2:
+                current_time = int(time.time())
+                seconds_in_a_day = 24 * 60 * 60
+                d_to_add = 7
+                next_activity_time_check = current_time + (d_to_add * seconds_in_a_day)
+
+                await change_users_activity_status(user_id, 1)
+                await update_activity_notification_time(user_id, next_activity_time_check)
             sub_tier = await check_user_sub_tier(user_id)
             current_wallet_list = await get_current_users_wallet_number(user_id)
             page = int(call.data.split("_")[-1])
@@ -393,6 +402,22 @@ async def callback_query(call):
         except Exception as e:
             print("An error occurred:", e)
 
+    elif call.data == "active":
+        await bot.answer_callback_query(call.id)
+
+        current_time = int(time.time())
+        seconds_in_a_day = 24 * 60 * 60
+        d_to_add = 7
+        next_activity_time_check = current_time + (d_to_add * seconds_in_a_day)
+
+        await change_users_activity_status(user_id, 1)
+        await update_activity_notification_time(user_id, next_activity_time_check)
+        await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+
+    elif call.data == "not_active":
+        await bot.answer_callback_query(call.id)
+        await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 async def handle_text(message):
@@ -495,7 +520,7 @@ async def handle_text(message):
 async def check_notification_condition():
     while True:
         try:
-            all_users_id = await get_all_user_ids()
+            all_users_id = await get_all_active_user_ids()
 
             for user_id in all_users_id:
                 user_wallets_trigger_count = await get_wallets_trigger_count(user_id)
@@ -589,11 +614,59 @@ async def check_notification_condition():
             print(f"Error check_notification_condition func: {error}")
 
 
+async def notification_activity_check():
+    while True:
+        all_users_id = await get_all_user_ids()
+
+        for user_id in all_users_id:
+            get_users_activity_status = await get_users_active_status(user_id)
+            # 0 - active check noti, 1 - prove activity, 2 - noti sent, but user not active yet
+            if get_users_activity_status == 0:
+                text = "Greetings! Please confirm your activity status!"
+
+                button_list0 = [
+                    types.InlineKeyboardButton("️🟢", callback_data="active"),
+                    types.InlineKeyboardButton("️🔴", callback_data="not_active"),
+                ]
+
+                reply_markup = types.InlineKeyboardMarkup([button_list0])
+                try:
+                    await bot.send_message(user_id, text=text, reply_markup=reply_markup)
+                except:
+                    pass
+                await change_users_activity_status(user_id, 2)
+
+        await asyncio.sleep(1)
+        # await asyncio.sleep(120)
+
+
+async def global_activity_check():
+    while True:
+        all_users_id = await get_all_user_ids()
+
+        current_time = int(time.time())
+        for user_id in all_users_id:
+            activity_time = await get_activity_notification_time(user_id)
+
+            if activity_time < current_time:
+                await change_users_activity_status(user_id, 0)
+                current_time = int(time.time())
+                seconds_in_a_day = 24 * 60 * 60
+                d_to_add = 30
+                next_activity_time_check = current_time + (d_to_add * seconds_in_a_day)
+                await update_activity_notification_time(user_id, next_activity_time_check)
+
+
+        await asyncio.sleep(1)
+
+
 async def main():
     try:
         bot_task = asyncio.create_task(bot.polling(non_stop=True, request_timeout=500))
         notification = asyncio.create_task(check_notification_condition())
-        await asyncio.gather(bot_task, notification)
+        activity_notification = asyncio.create_task(notification_activity_check())
+        global_activity_status_check = asyncio.create_task(global_activity_check())
+        await asyncio.gather(bot_task, notification, activity_notification, global_activity_status_check)
     except Exception as error:
         print(error)
 

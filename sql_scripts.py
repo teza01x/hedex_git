@@ -25,6 +25,16 @@ def add_user_to_db(user_id, username):
     conn.close()
 
 
+def update_username(user_id, username):
+    conn = sqlite3.connect(data_base)
+    cursor = conn.cursor()
+
+    cursor.execute("UPDATE user SET username = ? WHERE user_id = ?", (username, user_id,))
+
+    conn.commit()
+    conn.close()
+
+
 def check_user_exists(user_id):
     conn = sqlite3.connect(data_base)
     cursor = conn.cursor()

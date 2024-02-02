@@ -85,6 +85,29 @@ async def get_all_user_ids():
             return result
 
 
+async def get_users_active_status(user_id):
+    async with aiosqlite.connect(wt_database) as conn:
+        async with conn.cursor() as cursor:
+            result = await cursor.execute("SELECT activity_status FROM user WHERE user_id = ?", (user_id,))
+            result = await result.fetchone()
+            return result[0]
+
+
+async def change_users_activity_status(user_id, act_status):
+    async with aiosqlite.connect(wt_database) as conn:
+        async with conn.cursor() as cursor:
+            await cursor.execute("UPDATE user SET activity_status = ? WHERE user_id = ?", (act_status, user_id,))
+            await conn.commit()
+
+
+async def get_all_active_user_ids():
+    async with aiosqlite.connect(wt_database) as conn:
+        async with conn.cursor() as cursor:
+            result = await cursor.execute("SELECT user_id FROM user WHERE activity_status = ?", (1,))
+            result = [i[0] for i in await result.fetchall()]
+            return result
+
+
 async def get_user_wallets(user_id):
     async with aiosqlite.connect(wt_database) as conn:
         async with conn.cursor() as cursor:
@@ -172,10 +195,37 @@ async def check_user_exists(user_id):
 async def add_user_to_db(user_id, username):
     async with aiosqlite.connect(wt_database) as conn:
         async with conn.cursor() as cursor:
+            current_time = int(time.time())
+            seconds_in_a_day = 24 * 60 * 60
+            d_to_add = 1
+            new_time = current_time + (d_to_add * seconds_in_a_day)
             await cursor.execute(
-                "INSERT INTO user (user_id, username, active_task, sub_type, end_sub_time, tracking_wallets_limit, wallets_trigger_count, menu_status, time_trigger) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                (user_id, username, 0, 0, None, 10, 2, 0, 10,))
+                "INSERT INTO user (user_id, username, active_task, sub_type, activity_time_check, tracking_wallets_limit, wallets_trigger_count, menu_status, time_trigger, activity_status) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (user_id, username, 0, 0, new_time, 10, 2, 0, 10, 1,))
             await conn.commit()
+
+
+async def update_username(user_id, username):
+    async with aiosqlite.connect(wt_database) as conn:
+        async with conn.cursor() as cursor:
+            await cursor.execute("UPDATE user SET username = ? WHERE user_id = ?", (username, user_id,))
+            await conn.commit()
+
+
+
+async def update_activity_notification_time(user_id, next_activity_time_check):
+    async with aiosqlite.connect(wt_database) as conn:
+        async with conn.cursor() as cursor:
+            await cursor.execute("UPDATE user SET activity_time_check = ? WHERE user_id = ?", (next_activity_time_check, user_id,))
+            await conn.commit()
+
+
+async def get_activity_notification_time(user_id):
+    async with aiosqlite.connect(wt_database) as conn:
+        async with conn.cursor() as cursor:
+            result = await cursor.execute("SELECT activity_time_check FROM user WHERE user_id = ?", (user_id,))
+            user_status = await result.fetchone()
+            return user_status[0]
 
 
 async def change_user_menu_status(user_id, status):

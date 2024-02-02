@@ -54,6 +54,7 @@ async def start(message):
                 print(error)
         else:
             try:
+                update_username(user_id, username)
                 await bot.send_message(message.chat.id, text=text, parse_mode="MarkdownV2", reply_markup=reply_markup, disable_web_page_preview=True)
             except Exception as error:
                 print(error)

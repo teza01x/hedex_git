@@ -117,7 +117,7 @@ async def gather_wallet_transactions():
 
             unique_wallets = list()
             wallets_db = list()
-            user_ids = await get_all_user_ids()
+            user_ids = await get_all_active_user_ids()
             for user_id in user_ids:
                 all_users_wallets = await get_user_wallets(user_id)
                 wallet_limit = await check_user_sub_tier(user_id)
@@ -127,8 +127,7 @@ async def gather_wallet_transactions():
 
             wallets_db = [wallet for wallet in unique_wallets if wallet not in wallets_db]
 
-            # wallets_db = await get_all_tracking_wallets()
-            # wallet_lists = [wallets_db[:500]]
+
             wallet_lists = list()
             max_size = 500
             if len(wallets_db) > max_size:
