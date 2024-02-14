@@ -1,12 +1,21 @@
 import asyncio
 import requests
+import random
 from web3 import Web3, HTTPProvider
 from config import *
 
 
 async def get_usd_value_from_eth(eth):
+    with open("Webshare 100 proxies.txt", 'r') as file:
+        proxy_list = file.read().split("\n")
+        proxy = proxy_list[random.randrange(0, len(proxy_list))].split(":")
+        proxy_address, proxy_port, proxy_username, proxy_password = proxy[0], proxy[1], proxy[2], proxy[3]
+        proxies = {
+            'http': f'http://{proxy_username}:{proxy_password}@{proxy_address}:{proxy_port}',
+        }
+
     url = "https://api.coingecko.com/api/v3/coins/ethereum"
-    coingecko_response = requests.get(url)
+    coingecko_response = requests.get(url, proxies=proxies)
     if coingecko_response.status_code == 200:
         result = coingecko_response.json()
         eth_usd_price = result['market_data']['current_price']['usd']
@@ -106,8 +115,16 @@ async def check_transaction_hash(tx_hash):
 
 
 async def get_eth_value_from_usd(usd):
+    with open("Webshare 100 proxies.txt", 'r') as file:
+        proxy_list = file.read().split("\n")
+        proxy = proxy_list[random.randrange(0, len(proxy_list))].split(":")
+        proxy_address, proxy_port, proxy_username, proxy_password = proxy[0], proxy[1], proxy[2], proxy[3]
+        proxies = {
+            'http': f'http://{proxy_username}:{proxy_password}@{proxy_address}:{proxy_port}',
+        }
+
     url = "https://api.coingecko.com/api/v3/coins/ethereum"
-    coingecko_response = requests.get(url)
+    coingecko_response = requests.get(url, proxies=proxies)
     if coingecko_response.status_code == 200:
         result = coingecko_response.json()
         eth_usd_price = result['market_data']['current_price']['usd']
@@ -115,8 +132,18 @@ async def get_eth_value_from_usd(usd):
 
 
 async def get_eth_price():
+    with open("Webshare 100 proxies.txt", 'r') as file:
+        proxy_list = file.read().split("\n")
+        proxy = proxy_list[random.randrange(0, len(proxy_list))].split(":")
+        proxy_address, proxy_port, proxy_username, proxy_password = proxy[0], proxy[1], proxy[2], proxy[3]
+        proxies = {
+            'http': f'http://{proxy_username}:{proxy_password}@{proxy_address}:{proxy_port}',
+        }
+
     url = "https://api.coingecko.com/api/v3/coins/ethereum"
-    coingecko_response = requests.get(url)
+    coingecko_response = requests.get(url, proxies=proxies)
     if coingecko_response.status_code == 200:
         result = coingecko_response.json()
         return result['market_data']['current_price']['usd']
+
+

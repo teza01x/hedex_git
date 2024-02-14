@@ -200,7 +200,7 @@ async def scan(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -277,7 +277,7 @@ async def contract(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -333,7 +333,7 @@ async def top25(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -389,7 +389,7 @@ async def top50(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -445,7 +445,7 @@ async def top100(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -501,7 +501,7 @@ async def top250(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -557,7 +557,7 @@ async def top500(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -613,7 +613,7 @@ async def top1m(message):
                                        text="☑️**The data is now being published to a private group\.**☑️\n🔸**Please wait until the bot finishes publishing and repeat your request\.**🔸",
                                        parse_mode="MarkdownV2", reply_to_message_id=message.id)
         else:
-            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a `Individual` subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
+            await bot.send_message(message.from_user.id, text="⛔️*You do not have permission to use this command\. To use this command\, a paid subscription is required\.*", parse_mode="MarkdownV2", reply_to_message_id=message.id)
     except Exception as e:
         print(f"Error: {e}")
         change_active_task_status(0, user_id)
@@ -732,84 +732,43 @@ async def top5m(message):
 
 
 async def auto_scan(wallet_address):
-    try:
-        try:
-            while True:
-                first_point_info = auto_first_pass_cycle(wallet_address)
-                if first_point_info == "busy":
-                    await asyncio.sleep(20)
-                elif first_point_info[0] == "free":
-                    result_private, result_standard = await first_point(first_point_info[1], wallet_address)
-                    break
-            time.sleep(1)
-            try:
-                markdown_text_private = escape(result_private, flag=0)
-            except Exception as error:
-                print(error)
-            try:
-                markdown_text_standard = escape(result_standard, flag=0)
-            except Exception as error:
-                print(error)
+    while True:
+        first_point_info = auto_first_pass_cycle(wallet_address)
+        if first_point_info == "busy":
+            await asyncio.sleep(20)
+        elif first_point_info[0] == "free":
+            wallet_age, trade_router, risk, scanned_before_str, new_header, new_body = await auto_first_point(first_point_info[1], wallet_address)
+            break
+    return wallet_age, trade_router, risk, scanned_before_str, new_header, new_body
 
-            return markdown_text_private, markdown_text_standard
-        except:
-            return [], []
-    except Exception as e:
-        print(f"Error: {e}")
 
 
 async def auto_contract(contract_address):
     try:
-        try:
-            while True:
-                second_point_info = auto_second_pass_cycle(contract_address)
-                if second_point_info == "busy":
-                    await asyncio.sleep(20)
-                elif second_point_info[0] == "free":
-                    result_private, result_standard, wallet_addresses = await auto_second_point(second_point_info[1], contract_address)
-                    break
-            time.sleep(1)
-            try:
-                markdown_text_private = escape(result_private, flag=0)
-            except Exception as error:
-                print(error)
-            try:
-                markdown_text_standard = escape(result_standard, flag=0)
-            except Exception as error:
-                print(error)
-
-            return markdown_text_private, markdown_text_standard, wallet_addresses
-        except:
-            return [], [], []
-    except Exception as e:
-        print(f"Error: {e}")
+        while True:
+            second_point_info = auto_second_pass_cycle(contract_address)
+            if second_point_info == "busy":
+                await asyncio.sleep(20)
+            elif second_point_info[0] == "free":
+                wallet_info_list = await auto_second_point(second_point_info[1], contract_address)
+                break
+        return wallet_info_list
+    except:
+        return list()
 
 
 async def auto_top(url, iteration):
     try:
-        try:
-            while True:
-                third_point_info = auto_third_pass_cycle(url)
-                if third_point_info == "busy":
-                    time.sleep(20)
-                elif third_point_info[0] == "free":
-                    result_private, result_standard, contract_addresses = await auto_third_point(third_point_info[1], iteration)
-                    break
-            time.sleep(1)
-            try:
-                markdown_text_private = escape(result_private, flag=0)
-            except Exception as error:
-                print(error)
-            try:
-                markdown_text_standard = escape(result_standard, flag=0)
-            except Exception as error:
-                print(error)
-
-            return markdown_text_private, markdown_text_standard, contract_addresses
-        except:
-            return [], [], []
-    except Exception as e:
-        print(f"Error: {e}")
+        while True:
+            third_point_info = auto_third_pass_cycle(url)
+            if third_point_info == "busy":
+                time.sleep(20)
+            elif third_point_info[0] == "free":
+                top_info, lp = await auto_third_point(third_point_info[1], iteration)
+                break
+        return top_info, lp
+    except:
+        return list(), str()
 
 
 async def auto_posting_info():
@@ -818,7 +777,7 @@ async def auto_posting_info():
             off_driver_func()
             make_all_active_task_by_status(0)
             make_auto_post_status(1)
-            await asyncio.sleep(15)
+            await asyncio.sleep(1)
             liq_urls = [
                 "https://dexscreener.com/gainers?chainIds=ethereum&maxLiq=25000&min24HTxns=300&min24HSells=30&min24HVol=25000",
                 "https://dexscreener.com/gainers?chainIds=ethereum&minLiq=25000&maxLiq=50000&min24HTxns=300&min24HSells=30&min24HVol=50000",
@@ -832,93 +791,113 @@ async def auto_posting_info():
             iteration = 0
             for url in liq_urls:
                 iteration += 1
-                private_group_top, standard_group_top, contracts = await auto_top(url, iteration)
-
+                top_info, lp = await auto_top(url, iteration)
+                print(f"ITERATION {iteration}")
                 await asyncio.sleep(1)
-                if len(private_group_top) == 0:
+                if len(top_info) == 0:
                     print("Error in auto_top block")
                 else:
-                    try:
-                        await bot.send_message(private_group_id, text=private_group_top, parse_mode="MarkdownV2", disable_web_page_preview=True)
-                    except Exception as error:
-                        print("Error posting top contracts in private group")
-                        print(error)
-                    try:
-                        await bot.send_message(standard_group_id, text=standard_group_top, parse_mode="MarkdownV2")
-                    except Exception as error:
-                        print("Error posting top contracts in standard group")
-                        print(error)
-                    await asyncio.sleep(5)
-                    for contract in contracts[:3]:
-                        private_group_contract, standard_group_contract, wallet_addresses = await auto_contract(contract)
-                        time.sleep(1)
-                        if len(private_group_contract) == 0:
+                    for contract_info in top_info[:3]:
+                        percent_price_change = contract_info[0]
+                        token_symbol = contract_info[1]
+                        contract = contract_info[2]
+
+                        wallet_info_list = await auto_contract(contract)
+                        if len(wallet_info_list) == 0:
                             print("Error in auto_contract block")
                         else:
-                            try:
-                                button_list0 = [
-                                    types.InlineKeyboardButton("️Maestro 🎩", url=f"t.me/maestro?start={contract}-hedexbot"),
-                                ]
-                                button_list1 = [
-                                    types.InlineKeyboardButton("️Maestro Pro 🎩✨", url=f"t.me/MaestroProBot?start={contract}-hedexbot"),
-                                    types.InlineKeyboardButton("️Banana Gun 🍌🔫", url=f"https://t.me/BananaGunSniper_bot?start=snp_Hedexbot_{contract}"),
-                                ]
-                                button_list2 = [
-                                    types.InlineKeyboardButton("️Otto Scan 🔎", url=f"https://t.me/OttoSimBot?start={contract}"),
-                                    types.InlineKeyboardButton("️Safe Analyzer 🔎", url=f"t.me/SafeAnalyzerbot?start={contract}"),
-                                ]
-                                button_list3 = [
-                                    types.InlineKeyboardButton("️TTF Scan 🔎", url=f"https://t.me/ttfbotbot?start={contract}"),
-                                    types.InlineKeyboardButton("️TTF Chart 📈", url=f"https://t.me/ttfbotbot?start=chart{contract}"),
-                                ]
+                            await asyncio.sleep(1)
 
-                                reply_markup = types.InlineKeyboardMarkup([button_list0, button_list1, button_list2, button_list3])
+                            contract_block = ("**TOP 3 WALLETS for** [{}](https://etherscan.io/token/{}) **({} + LP)**\n"
+                                             "**{}:** [Dextools](https://www.dextools.io/app/en/ether/pair-explorer/{}) | [Dexscreener](https://dexscreener.com/ethereum/{})\n"
+                                             "_____________________________\n\n".format(token_symbol, contract, lp, percent_price_change, contract, contract))
 
-                                await bot.send_message(private_group_id, text=private_group_contract, parse_mode="MarkdownV2", reply_markup=reply_markup, disable_web_page_preview=True)
-                            except Exception as error:
-                                print("Error posting top contract traders in private group")
-                                print(error)
-                            try:
-                                button_list0 = [
-                                    types.InlineKeyboardButton("️Maestro 🎩", url=f"t.me/maestro?start={contract}-hedexbot"),
-                                ]
-                                button_list1 = [
-                                    types.InlineKeyboardButton("️Maestro Pro 🎩✨", url=f"t.me/MaestroProBot?start={contract}-hedexbot"),
-                                    types.InlineKeyboardButton("️Banana Gun 🍌🔫", url=f"https://t.me/BananaGunSniper_bot?start=snp_Hedexbot_{contract}"),
-                                ]
-                                button_list2 = [
-                                    types.InlineKeyboardButton("️Otto Scan 🔎", url=f"https://t.me/OttoSimBot?start={contract}"),
-                                    types.InlineKeyboardButton("️Safe Analyzer 🔎", url=f"t.me/SafeAnalyzerbot?start={contract}"),
-                                ]
-                                button_list3 = [
-                                    types.InlineKeyboardButton("️TTF Scan 🔎", url=f"https://t.me/ttfbotbot?start={contract}"),
-                                    types.InlineKeyboardButton("️TTF Chart 📈", url=f"https://t.me/ttfbotbot?start=chart{contract}"),
-                                ]
+                            counter = 1
+                            wallet_info_block = list()
+                            wallet_info_block_lite = list()
+                            for wallet_info in wallet_info_list[:3]:
+                                wallet_trade_data = wallet_info[0]
+                                wallet = wallet_info[1]
 
-                                reply_markup = types.InlineKeyboardMarkup([button_list0, button_list1, button_list2, button_list3])
+                                wallet_age, trade_router, risk, scanned_before_str, new_header, new_body = await auto_scan(wallet)
 
-                                await bot.send_message(standard_group_id, text=standard_group_contract, parse_mode="MarkdownV2", reply_markup=reply_markup, disable_web_page_preview=True)
-                            except Exception as error:
-                                print("Error posting top contract traders in standard group")
-                                print(error)
-                            await asyncio.sleep(5)
-                            for wallet in wallet_addresses:
-                                private_group_scan, standard_group_scan = await auto_scan(wallet)
-                                await asyncio.sleep(1)
-                                if len(private_group_scan) == 0:
-                                    print("Error in auto_scan block")
+                                if counter == 1:
+                                    perc_number = "1️⃣"
+                                elif counter == 2:
+                                    perc_number = "2️⃣"
+                                elif counter == 3:
+                                    perc_number = "3️⃣"
+
+                                if len(new_body) == 0:
+                                    new_body.append("N/A")
+
+                                wallet_block = ("_________________\n"
+                                                "{} `{}`[🔗](https://etherscan.io/address/{})\n"
+                                                "👶 **Age:** {} **|** **Profitability:** {}\n"
+                                                "🔎 **Scanned Before:** {}\n"
+                                                "{}"
+                                                "**{} PnL:**\n"
+                                                "{}\n\n"
+                                                "**TOTAL Stat:**\n"
+                                                "{}\n\n"
+                                                "**3 Highest Profit/ROI:**\n"
+                                                "{}\n").format(perc_number, wallet, wallet, wallet_age, risk, scanned_before_str, trade_router, token_symbol, wallet_trade_data, "\n".join(new_header), "\n".join(new_body))
+                                if counter == 1:
+                                    wallet_block_lite = ("_________________\n"
+                                                    "{} `{}`[🔗](https://etherscan.io/address/{})\n"
+                                                    "👶 **Age:** {} **|** **Profitability:** {}\n"
+                                                    "🔎 **Scanned Before:** {}\n"
+                                                    "{}"
+                                                    "**{} PnL:**\n"
+                                                    "{}\n\n"
+                                                    "**TOTAL Stat:**\n"
+                                                    "{}\n\n"
+                                                    "**3 Highest Profit/ROI:**\n"
+                                                    "{}\n").format(perc_number, wallet, wallet, wallet_age, risk, scanned_before_str, trade_router, token_symbol, wallet_trade_data, "\n".join(new_header), "\n".join(new_body))
                                 else:
-                                    try:
-                                        await bot.send_message(private_group_id, text=private_group_scan, parse_mode="MarkdownV2", disable_web_page_preview=True)
-                                    except Exception as error:
-                                        print("Error posting wallet info in private group")
-                                        print(error)
-                                    try:
-                                        await bot.send_message(standard_group_id, text=standard_group_scan, parse_mode="MarkdownV2")
-                                    except Exception as error:
-                                        print("Error posting wallet info in standard group")
-                                        print(error)
-                                    await asyncio.sleep(5)
+                                    wallet_block_lite = ("_________________\n"
+                                                    "{} [0x..(Premium Membership)](https://t.me/HedexPortalBot)\n"
+                                                    "👶 **Age:** {} **|** **Profitability:** {}\n"
+                                                    "🔎 **Scanned Before:** {}\n"
+                                                    "{}"
+                                                    "**{} PnL:**\n"
+                                                    "{}\n\n"
+                                                    "**TOTAL Stat:**\n"
+                                                    "{}\n\n"
+                                                    "**3 Highest Profit/ROI:**\n"
+                                                    "{}\n").format(perc_number, wallet_age, risk, scanned_before_str, trade_router, token_symbol, wallet_trade_data, "\n".join(new_header), "\n".join(new_body))
+
+                                wallet_info_block.append(wallet_block)
+                                wallet_info_block_lite.append(wallet_block_lite)
+                                counter += 1
+                            button_list0 = [
+                                types.InlineKeyboardButton("️Maestro 🎩", url=f"t.me/maestro?start={contract}-hedexbot"),
+                            ]
+                            button_list1 = [
+                                types.InlineKeyboardButton("️Maestro Pro 🎩✨", url=f"t.me/MaestroProBot?start={contract}-hedexbot"),
+                                types.InlineKeyboardButton("️Banana Gun 🍌🔫", url=f"https://t.me/BananaGunSniper_bot?start=snp_Hedexbot_{contract}"),
+                            ]
+                            button_list2 = [
+                                types.InlineKeyboardButton("️Otto Scan 🔎", url=f"https://t.me/OttoSimBot?start={contract}"),
+                                types.InlineKeyboardButton("️Safe Analyzer 🔎", url=f"t.me/SafeAnalyzerbot?start={contract}"),
+                            ]
+                            button_list3 = [
+                                types.InlineKeyboardButton("️TTF Scan 🔎", url=f"https://t.me/ttfbotbot?start={contract}"),
+                                types.InlineKeyboardButton("️TTF Chart 📈", url=f"https://t.me/ttfbotbot?start=chart{contract}"),
+                            ]
+
+                            reply_markup = types.InlineKeyboardMarkup([button_list0, button_list1, button_list2, button_list3])
+
+
+                            signature = "\n⚡️ `Powered By Hedex` ⚡️\n🤖 @HedexPortalBot 🤖"
+                            private_group_post = contract_block + "\n".join(wallet_info_block) + signature
+                            private_group_post = escape(private_group_post, flag=0)
+
+                            lite_group_post = contract_block + "\n".join(wallet_info_block_lite) + signature
+                            lite_group_post = escape(lite_group_post, flag=0)
+
+                            await bot.send_message(private_group_id, text=private_group_post, parse_mode="MarkdownV2", reply_markup=reply_markup, disable_web_page_preview=True)
+                            await bot.send_message(standard_group_id, text=lite_group_post, parse_mode="MarkdownV2", reply_markup=reply_markup, disable_web_page_preview=True)
                 make_all_active_task_by_status(0)
                 make_auto_post_status(0)
                 await asyncio.sleep(3600)
@@ -944,8 +923,9 @@ async def check_users_sub_time():
                     except:
                         print("Error demote user when sub is over")
                     try:
-                        await bot.ban_chat_member(private_group_id, user_id=user_id)
-                        await bot.unban_chat_member(private_group_id, user_id=user_id)
+                        await bot.kick_chat_member(private_group_id, user_id=user_id)
+                        # await bot.ban_chat_member(private_group_id, user_id=user_id)
+                        # await bot.unban_chat_member(private_group_id, user_id=user_id)
                     except Exception as error:
                         print(f"Error to kick user: {user_id}")
                         print(error)
@@ -1169,12 +1149,12 @@ async def main():
     try:
         bot_task = asyncio.create_task(bot.polling(non_stop=True, request_timeout=500))
         auto_top_post = asyncio.create_task(auto_posting_info())
-        sub_date_monitoring = asyncio.create_task(check_users_sub_time())
-        top_pnl_week_post = asyncio.create_task(top10_pnl_wallets())
-        top_pnl_daily_post = asyncio.create_task(top_daily_pnl_wallets())
-        top_pnl_weekly_post = asyncio.create_task(top_weekly_pnl_wallets())
-        await asyncio.gather(bot_task, sub_date_monitoring, auto_top_post, top_pnl_week_post, top_pnl_daily_post, top_pnl_weekly_post)
-        await asyncio.gather(bot_task)
+        # sub_date_monitoring = asyncio.create_task(check_users_sub_time())
+        # top_pnl_week_post = asyncio.create_task(top10_pnl_wallets())
+        # top_pnl_daily_post = asyncio.create_task(top_daily_pnl_wallets())
+        # top_pnl_weekly_post = asyncio.create_task(top_weekly_pnl_wallets())
+        # await asyncio.gather(bot_task, sub_date_monitoring, auto_top_post, top_pnl_week_post, top_pnl_daily_post, top_pnl_weekly_post)
+        await asyncio.gather(bot_task, auto_top_post)
     except Exception as error:
         print(error)
 
