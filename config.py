@@ -1,23 +1,23 @@
 import os
 
 
-telegram_token = '6690193206:AAFZGXOfXbkOK4tS-zAE6FCzNJ8R9S2LgE0'
-payment_token = '6916772465:AAFIVmoM1fMFmNBspZpwmQbzUNHXhA9USOQ'
+telegram_token = ''
+payment_token = ''
 path_to_browser = "/usr/bin/google-chrome"
 limit_queue = 3
 days_delay_weekly = 7
 days_delay_daily = 1
 
 
-private_group_id = -1001943751912
-standard_group_id = -1001919068990
-premium_chat_group_id = -1002040787460
+private_group_id = -11111
+standard_group_id = -11111
+premium_chat_group_id = -11111
 
 data_base = os.path.join(os.path.dirname(__file__), 'database.db')
 
-ethscan_api_key = "PDZMXAR2GWRXYWUIS14NSQ9WS4EPTIKIFI"
-infura_url = 'https://mainnet.infura.io/v3/8b6f204cc9d14fc0a0f48fb531a46384'
-owner_wallet = "0xB604E5e0A444068b2c00B2D730350E76c058df4f"
+ethscan_api_key = ""
+infura_url = 'https://mainnet.infura.io/v3/
+owner_wallet = ""
 deviation_percent = 5
 
 price_packages_usdt_usdc = {
